@@ -20,23 +20,23 @@ controller.down.on_event(ControllerButtonEvent.PRESSED, on_down_pressed)
 
 blue_player_ball: Sprite = None
 blue_player_ball = sprites.create(img("""
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . f f f f f . . . . . . .
-    . . . f 1 8 8 8 8 f . . . . . .
-    . . f 1 8 8 8 8 8 8 f . . . . .
-    . . f 8 8 8 8 8 8 8 f . . . . .
-    . . f 8 8 8 8 8 8 8 f . . . . .
-    . . f 8 8 8 8 8 8 8 f . . . . .
-    . . f 8 8 8 8 8 8 8 f . . . . .
-    . . . f 8 8 8 8 8 f . . . . . .
-    . . . . f f f f f . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-"""),
+        . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . f f f f f . . . . . . . 
+            . . . f 1 8 8 8 8 f . . . . . . 
+            . . f 1 8 8 8 8 8 8 f . . . . . 
+            . . f 8 8 8 8 8 8 8 f . . . . . 
+            . . f 8 8 8 8 8 8 8 f . . . . . 
+            . . f 8 8 8 8 8 8 8 f . . . . . 
+            . . f 8 8 8 8 8 8 8 f . . . . . 
+            . . . f 8 8 8 8 8 f . . . . . . 
+            . . . . f f f f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . .
+    """),
     SpriteKind.player)
 blue_player_ball.set_position(130, 90)
 red_enemy_ball = sprites.create(img("""
@@ -67,8 +67,8 @@ scene.camera_follow_sprite(blue_player_ball)
 red_enemy_ball.follow(blue_player_ball, 25)
 
 def on_update_interval():
-    if blue_player_ball.x < 0:
+    if blue_player_ball.x <= 0:
         blue_player_ball.set_velocity(50, 50)
-    if blue_player_ball.y > 0:
+    if blue_player_ball.y <= 0:
         blue_player_ball.set_velocity(50, 50)
 game.on_update_interval(500, on_update_interval)
