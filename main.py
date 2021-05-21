@@ -64,7 +64,7 @@ tiles.set_tilemap(tilemap("""
     level1
 """))
 scene.camera_follow_sprite(blue_player_ball)
-red_enemy_ball.follow(blue_player_ball, 25)
+red_enemy_ball.follow(blue_player_ball, 50)
 
 def on_update_interval():
     if blue_player_ball.x <= 0:
